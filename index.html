@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-AO">
 <head>
+  <link rel="stylesheet" href="https://unpkg.com" />
   <link rel="icon" type="image/png" href="favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -547,6 +548,13 @@ document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('clic
     item.style.display=(f==='todos'||item.dataset.cat===f)?'':'none';
   });
 }));
+</script>
+  <script src="https://unpkg.com"></script>
+<script>
+  AOS.init({
+    duration: 1000, /* Duração da animação em milissegundos (1 segundo) */
+    once: true /* A animação acontece apenas uma vez ao rolar */
+  });
 </script>
 </body>
 </html>
