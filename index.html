@@ -553,8 +553,8 @@ textarea{min-height:110px; resize:vertical;}
    data-aos="zoom-in">
    <span style="font-family:sans-serif; font-weight:bold;">WA</span>
 </a>
-
-<!-- RODAPÉ CORRIGIDO E SEM DUPLICAÇÕES -->
+    
+<!-- RODAPÉ CORRIGIDO E INTEGRADO -->
 <footer data-aos="fade-up">
   <div class="wrap">
     <div class="foot-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; padding: 40px 0 20px;">
@@ -578,15 +578,70 @@ textarea{min-height:110px; resize:vertical;}
   </div>
 </footer>
 
-    <!-- Script de Ativação Único das Animações AOS -->
-    <script src="https://unpkg.com"></script>
-    <script>
-      AOS.init({
-        duration: 1000,
-        once: true,
-        offset: 100
-      });
-    </script>
+<!-- Script de Ativação das Animações AOS -->
+<script src="https://unpkg.com"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+    offset: 100
+  });
+</script>
+
+<!-- Script Original de Controle de Páginas e Abas do Claude -->
+<script>
+  const links = document.querySelectorAll('[data-page]');
+  const pages = document.querySelectorAll('.page');
+  const navLinks = document.querySelectorAll('nav.links a');
+
+  function showPage(id) {
+    pages.forEach(p => p.classList.toggle('active', p.id === 'page-' + id));
+    navLinks.forEach(a => a.classList.toggle('active', a.dataset.page === id));
+    
+    // Fecha o menu hamburguer caso esteja no mobile
+    const navMenu = document.querySelector('nav.links');
+    if (navMenu) navMenu.classList.remove('open');
+    
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    history.replaceState(null, '', '#' + id);
+  }
+
+  links.forEach(l => l.addEventListener('click', e => {
+    e.preventDefault();
+    showPage(l.dataset.page);
+  }));
+
+  const burger = document.querySelector('.burger');
+  if (burger) {
+    burger.addEventListener('click', () => {
+      document.querySelector('nav.links').classList.toggle('open');
+    });
+  }
+
+  const initial = location.hash.replace('#', '');
+  showPage(document.getElementById('page-' + initial) ? initial : 'inicio');
+
+  // Controle das abas de serviços
+  document.querySelectorAll('.svc-tabs button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.svc-tabs button').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.svc-panel').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById('tab-' + b.dataset.tab).classList.add('active');
+  }));
+
+  // Controle dos filtros de portfolio
+  document.querySelectorAll('.filters button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.filters button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    const f = b.dataset.f;
+    document.querySelectorAll('#portGrid .port-item').forEach(item => {
+      item.style.display = (f === 'todos' || item.dataset.cat === f) ? 'none' : '';
+      // Nota: Mantive a lógica inversa do seu script para o filtro ocultar os itens corretos
+      item.style.display = (f === 'todos' || item.dataset.cat === f) ? 'block' : 'none';
+    });
+  }));
+</script>
 </body>
 </html>
+
 
