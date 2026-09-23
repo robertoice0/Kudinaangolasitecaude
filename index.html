@@ -557,81 +557,36 @@ textarea{min-height:110px; resize:vertical;}
 <!-- RODAPÉ CORRIGIDO E SEM DUPLICAÇÕES -->
 <footer data-aos="fade-up">
   <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <img src="data:image/png;base64,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</h5><p>+244 958 726 489</p><p style="font-weight:500; font-size:.9rem; color:#666;">@kudina_angola</p><p style="font-weight:500; font-size:.9rem; color:#666;">Luanda, Angola</p></div>
+    <div class="foot-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; padding: 40px 0 20px;">
+      <div class="info-block">
+        <h5 style="color: #b8895b; margin-bottom: 10px; font-family: 'Fraunces', serif;">Empresa</h5>
+        <p style="color: #fff;">Kudina Angola</p>
+        <p style="font-weight: 500; font-size: .9rem; color: #a0a0a0;">Luanda, Angola</p>
+      </div>
+      <div class="info-block">
+        <h5 style="color: #b8895b; margin-bottom: 10px; font-family: 'Fraunces', serif;">WhatsApp</h5>
+        <a href="https://wa.me" target="_blank" rel="noopener" style="color: #fff; text-decoration: underline;">+244 958 726 489</a>
+      </div>
+      <div class="info-block">
+        <h5 style="color: #b8895b; margin-bottom: 10px; font-family: 'Fraunces', serif;">Instagram</h5>
+        <a href="https://instagram.com/kudina_angola" target="_blank" rel="noopener" style="color: #fff; text-decoration: underline;">@kudina_angola</a>
       </div>
     </div>
-    <div style="margin-top:40px; border-top:1px solid rgba(35,39,42,.1); padding-top:20px; font-size:.85rem; color:#666; text-align:center;">
+    <div style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px; font-size: .85rem; color: #a0a0a0; text-align: center;">
       © 2026 Kudina Angola. Todos os direitos reservados. Design, decoração e personalização em Luanda.
     </div>
+  </div>
 </footer>
 
-    <!-- Script de Ativação das Animações Corrigido -->
-   <script src="https://unpkg.com"></script>
-    <script>
-      AOS.init({
-        duration: 1000, /* Animações com 1 segundo de duração */
-        once: true,     /* Executa o efeito apenas da primeira vez */
-        offset: 100     /* Começa o movimento a 100 píxeis de distância */
-      });
-    </script>
-</body>
-</html>
-
-<script>
-const links=document.querySelectorAll('[data-page]');
-const pages=document.querySelectorAll('.page');
-const navA=document.querySelectorAll('nav.links a');
-function showPage(id){
-  pages.forEach(p=>p.classList.toggle('active',p.id==='page-'+id));
-  navA.forEach(a=>a.classList.toggle('active',a.dataset.page===id));
-  document.getElementById('navLinks').classList.remove('open');
-  window.scrollTo({top:0,behavior:'instant'});
-  history.replaceState(null,'','#'+id);
-}
-links.forEach(l=>l.addEventListener('click',e=>{e.preventDefault(); showPage(l.dataset.page);}));
-document.getElementById('burgerBtn').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
-const initial=(location.hash||'#inicio').replace('#','');
-showPage(document.getElementById('page-'+initial)?initial:'inicio');
-
-// Services tabs
-document.querySelectorAll('.svc-tabs button').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('.svc-tabs button').forEach(x=>x.classList.remove('active'));
-  document.querySelectorAll('.svc-panel').forEach(x=>x.classList.remove('active'));
-  b.classList.add('active');
-  document.getElementById('tab-'+b.dataset.tab).classList.add('active');
-}));
-
-// Portfolio filters
-document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('active'));
-  b.classList.add('active');
-  const f=b.dataset.f;
-  document.querySelectorAll('#portGrid .port-item').forEach(item=>{
-    item.style.display=(f==='todos'||item.dataset.cat===f)?'':'none';
-  });
-}));
-</script>
-  <script src="https://unpkg.com"></script>
-<script>
-  AOS.init({
-    duration: 1000, /* Duração da animação em milissegundos (1 segundo) */
-    once: true /* A animação acontece apenas uma vez ao rolar */
-  });
-</script>
-        <!-- Script de Ativação das Animações -->
+    <!-- Script de Ativação Único das Animações AOS -->
     <script src="https://unpkg.com"></script>
     <script>
       AOS.init({
-        duration: 1000, /* Tempo da animação: 1 segundo */
-        once: true,     /* Anima apenas a primeira vez que o utilizador vê */
-        offset: 100     /* Começa a animar 100px antes do elemento aparecer no ecrã */
+        duration: 1000,
+        once: true,
+        offset: 100
       });
     </script>
 </body>
 </html>
-</body>
-</html>
-</body>
-</html>
+
